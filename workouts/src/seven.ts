@@ -4,14 +4,14 @@
 import * as readlineSync from 'readline-sync';
 
 
-const getNumberInput =(prompt :string) : number =>{
-    return parseInt(readlineSync.question(prompt),10);
+const getNumberInput = (prompt: string): number => {
+    return parseInt(readlineSync.question(prompt), 10);
 }
 
-const number:number = getNumberInput('Enter a number to print its multiplication table:');
+const number: number = getNumberInput('Enter a number to print its multiplication table:');
 
 console.log(`Multiplication table for ${number}:`);
 
-for(let i=1;i<=10;i++){
+for (let i = 1; i <= 10; i++) {
     console.log(`${number} x ${i} = ${number * i}`);
 }

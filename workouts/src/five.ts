@@ -5,14 +5,14 @@
 import * as readlineSync from 'readline-sync';
 
 
-const getNumberInput = (prompt:string) : number =>{
+const getNumberInput = (prompt: string): number => {
     return parseFloat(readlineSync.question(prompt));
 }
 
-const totalMark : number = getNumberInput('Enter the total mark percentage:');
+const totalMark: number = getNumberInput('Enter the total mark percentage:');
 
-let grade:string;
- 
+let grade: string;
+
 if (totalMark > 90) {
     grade = 'A';
 } else if (totalMark >= 80) {
