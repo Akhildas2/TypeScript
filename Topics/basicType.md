@@ -81,9 +81,21 @@ Object types represent non-primitive types.
    - Represents non-primitive types.
 
    ```typescript
-   declare function create(o: object | null): void;
-   create({ prop: 0 }); // OK
-   create(null); // OK
+   // Define an interface to describe the shape of the object
+   interface Student {
+     id: number;
+     name: string;
+     age: number;
+   }
+   // Create an object that adheres to the 'Student' interface
+   const student: Student = {
+     id: 1,
+     name: "John Doe",
+     age: 20,
+   };
+
+   // Accessing properties of the object
+   console.log(student.name); // Output: John Doe
    ```
 
 ## 3.Top Types
@@ -92,13 +104,13 @@ Top types are types that can hold any value.
 
 1. **Any**
 
-   - Can hold any type of value.
+- Can hold any type of value.
 
-   ```typescript
-   let notSure: any = 4;
-   notSure = "maybe a string instead";
-   notSure = false;
-   ```
+```typescript
+let notSure: any = 4;
+notSure = "maybe a string instead";
+notSure = false;
+```
 
 2. **Unknown**
 

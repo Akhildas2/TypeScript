@@ -77,10 +77,10 @@ console.log(person1.greet()); // Output: Hello, my name is Bob and I am 25 years
 
 ### 2.4 Key Points
 
-**Instantiation**: The process of creating an object from a class using the new keyword.
-**Properties**: The data held by the object, defined by the fields in the class.
-**Methods**: The actions that can be performed by the object, defined by the methods in the class.
-**Accessing Members**: Use the dot (.) notation to access properties and methods of the object.
+- **Instantiation**: The process of creating an object from a class using the new keyword.
+- **Properties**: The data held by the object, defined by the fields in the class.
+- **Methods**: The actions that can be performed by the object, defined by the methods in the class.
+- **Accessing Members**: Use the dot (.) notation to access properties and methods of the object.
 
 ## 3. Access Modifiers
 

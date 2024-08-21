@@ -1,10 +1,6 @@
-# Object-Oriented Programming (OOP)
+# 1.Object-Oriented Programming (OOP)
 
 Object-Oriented Programming (OOP) is a programming paradigm that uses objects and classes to structure and manage code. TypeScript, as a superset of JavaScript, supports OOP principles like classes, inheritance, polymorphism, encapsulation, and abstraction.
-
-## 1. Classes
-
-A class is a blueprint for creating objects. It defines properties and methods that the objects created from the class will have.
 
 ## 2.Inheritance
 

@@ -69,82 +69,21 @@ let personD: Iperson = {
 }
 console.log(personD.name);
 
-// Classes: Blueprints for creating objects.
-// Objects: Instances of classes.
-// Inheritance: Mechanism to create a new class from an existing class.
-// Polymorphism: Ability to use a common interface for different underlying forms (data types).
-// Encapsulation: Bundling data and methods into a single unit (class) and restricting access to some of the object's components.
-// Abstraction: Hiding complex implementation details and showing only the necessary features.
+//rest operator
 
-// Method overloading
-// that allows a class to have multiple methods with the same name but different parameter types or numbers. 
-class Shape {
-    area(side: number): number;
-    area(length: number, width: number): number;
-    area(sideorLength: number, width?: number): number {
-        if (width === undefined) {
-            return sideorLength * sideorLength
-        } else {
-            return sideorLength * width;
-        }
-    }
+function sum(...num: number[]): number {
+    return num.reduce((acc, val) => acc + val, 0)
 }
+console.log(sum(1, 2, 3, 4));
 
-const shape = new Shape();
-const squareArea = shape.area(5)
+//Optional Chaining
 
-//inheritance
-class Animal {
-    constructor(public name: string) { }
-
-    makeSound(): void {
-        console.log(`${this.name} makes a sound`);
-
-    }
-}
-
-class Dog extends Animal {
-    constructor(name: string) {
-        super(name)
-    }
-    makeSound(): void {
-        console.log(`${this.name} sound like booo`);
-    }
-}
-
-const animal = new Animal("cat")
-animal.makeSound()
-const dog = new Dog("booby")
-dog.makeSound()
-
-//without extend (Polymorphism)
-interface Speaker {
+interface Person {
     name: string;
-    speak(): void;
-
+    address?: {
+        street?: string;
+    };
 }
 
-class GeneralSpeaker implements Speaker {
-    constructor(public name: string) { }
-    speak(): void {
-        console.log(`${this.name} speaks Malayalam.`);
-
-    }
-}
-
-class EnglishSpeaker implements Speaker {
-    constructor(public name: string, private delegateSpeaker: Speaker) { }
-    speak(): void {
-        console.log(`${this.name} speaks English.`);
-
-    }
-    delegate(): void {
-        this.delegateSpeaker.speak();
-    }
-}
-const malayalamSpeaker = new GeneralSpeaker("Akhil");
-malayalamSpeaker.speak();
-const englishSpeaker = new EnglishSpeaker("Don", new GeneralSpeaker("Boo"));
-englishSpeaker.speak();
-englishSpeaker.delegate();
-
+let na: Person = { name: "akhil" };
+console.log(na.address?.street); // undefined
