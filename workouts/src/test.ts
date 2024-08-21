@@ -1,3 +1,4 @@
+/*
 // if conditional
 let num: number = 15;
 if (num < 10) {
@@ -87,3 +88,36 @@ interface Person {
 
 let na: Person = { name: "akhil" };
 console.log(na.address?.street); // undefined
+
+*/
+// async 
+
+const api = ' https://jsonplaceholder.typicode.com/posts'
+async function apiCall(apiUrl:string) {
+try {
+    const response = await fetch(apiUrl)
+    if(!response.ok){
+        throw new Error(`HTTP error! Status: ${response.status}`);   
+    }
+    const data = await response.json();
+    console.log('API Data:', data);
+} catch (error) {
+    console.error('Unknown Error:', error);
+}
+    
+}
+apiCall(api);
+
+
+// Generics 
+
+function identity<T>(value: T): T {
+    return value;
+  }
+  
+  let num = identity<number>(10);
+  let str = identity<string>("Hello");
+  
+  console.log(num); // 10
+  console.log(str); // Hello
+  

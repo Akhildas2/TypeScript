@@ -111,7 +111,7 @@ class Dogs extends Animals {
 
     }
 }
-class Cat extends Animals {
+class Cats extends Animals {
     makeNoise(): void {
         console.log("mewooo");
 
@@ -123,7 +123,7 @@ class Cat extends Animals {
     }
 }
 
-class Rat extends Cat {
+class Rat extends Cats {
 
     eat(): void {
         console.log("I am eating food");
@@ -136,7 +136,7 @@ class Rat extends Cat {
 const dogs = new Dogs()
 dogs.makeNoise()
 
-const cats = new Cat()
+const cats = new Cats()
 cats.makeNoise()
 cats.setCoordX(45)
 cats.returnToOwner()
@@ -246,3 +246,35 @@ malayalamSpeaker.speak();
 const englishSpeaker = new EnglishSpeaker("Don", new GeneralSpeaker("Boo"));
 englishSpeaker.speak();
 englishSpeaker.delegate();
+
+
+//Abstraction
+
+abstract class Animal {
+    abstract makeSound(): void;
+    move(): void {
+        console.log("Moving...");
+
+    }
+
+}
+
+
+class Dog extends Animal {
+    makeSound(): void {
+        console.log("Woof!");
+    }
+}
+
+class Cat extends Animal {
+    makeSound(): void {
+        console.log("Meow!");
+    }
+}
+
+const dog = new Dog();
+const cat = new Cat();
+dog.makeSound();  // Output: Woof!
+dog.move();   // Output: Moving...
+cat.makeSound(); // Output: Meow!
+cat.move(); // Output: Moving...
