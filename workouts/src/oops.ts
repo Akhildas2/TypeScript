@@ -7,7 +7,7 @@
 // Abstraction: Hiding complex implementation details and showing only the necessary features.
 
 
-//class and object
+// Class and object
 class Player {
     name?: string;
     health?: number;
@@ -42,7 +42,7 @@ akhil.greet() //hello ,my name is akhil
 
 
 
-//encapsulation
+// Encapsulation
 class Players {
     private health?: number;
     private speed?: number;
@@ -74,7 +74,7 @@ arun.getSpeed()
 console.log(`arun health ${arun.getHealth()}`);
 console.log(`arun speed ${arun.getSpeed()}`);
 
-//inheritance
+// Inheritance
 
 class Animals {
 
@@ -145,7 +145,7 @@ rat.eat()
 rat.sleep()
 
 
-//polymorphism
+// Polymorphism
 
 class Hero {
     health: number;
@@ -214,9 +214,35 @@ class Shape {
 const shape = new Shape();
 const squareArea = shape.area(5)
 
+// Method overriding 
+// Method overriding is when a child class changes the behavior of a method that it inherits from its parent class.
 
+class Animal1 {
+    sound(): void {
+      console.log("The animal makes a sound");
+    }
+  }
+  
+  class Dog1 extends Animal1 {
+    sound(): void {
+      console.log("The dog barks");
+    }
+  }
+  
+  class Cat1 extends Animal1 {
+    sound(): void {
+      console.log("The cat meows");
+    }
+  }
+  
+  const myDog = new Dog1();
+  const myCat = new Cat1();
+  
+  myDog.sound(); // Output: The dog barks
+  myCat.sound(); // Output: The cat meows
+  
 
-//without extend (Polymorphism)
+// Without extend (Polymorphism)
 interface Speaker {
     name: string;
     speak(): void;
@@ -248,7 +274,7 @@ englishSpeaker.speak();
 englishSpeaker.delegate();
 
 
-//Abstraction
+// Abstraction
 
 abstract class Animal {
     abstract makeSound(): void;

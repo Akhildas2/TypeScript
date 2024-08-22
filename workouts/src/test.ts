@@ -1,5 +1,5 @@
 
-// if conditional
+// If conditional
 let num: number = 15;
 if (num < 10) {
     console.log("lessthan 10");
@@ -8,19 +8,19 @@ if (num < 10) {
 }
 
 
-//for loop
+// For loop
 for (let i: number = 0; i < 10; i++) {
     console.log(i);
 }
 
-//do while 
+// Do while 
 let number: number = 0;
 do {
     console.log(number);
     number++
 } while (number < 5)
 
-// function
+// Function
 function greet(name: string): string {
     return `hello, ${name}`
 }
@@ -31,14 +31,14 @@ let add = function (a: number, b: number): Number {
 }
 console.log(add(5, 7));
 
-//create objects
+// Create objects
 let person: { name: string; age: number } = {
     name: "akhil",
     age: 23
 }
 console.log(person.name);
 
-//class
+// Class
 class Personal {
     name: string;
     age: number;
@@ -57,7 +57,7 @@ let personalDeatil = new Personal("Akhil", 12)
 console.log(personalDeatil);
 
 
-//interface
+// Interface
 
 interface Iperson {
     name: string;
@@ -70,14 +70,14 @@ let personD: Iperson = {
 }
 console.log(personD.name);
 
-//rest operator
+// Rest operator
 
 function sum(...num: number[]): number {
     return num.reduce((acc, val) => acc + val, 0)
 }
 console.log(sum(1, 2, 3, 4));
 
-//Optional Chaining
+// Optional Chaining
 
 interface Person {
     name: string;
@@ -90,7 +90,7 @@ let na: Person = { name: "akhil" };
 console.log(na.address?.street); // undefined
 
 
-// async 
+// Async 
 
 const api = ' https://jsonplaceholder.typicode.com/posts'
 async function apiCall(apiUrl: string) {
@@ -122,11 +122,49 @@ console.log(num); // 10
 console.log(str); // Hello
 
 
-//Default Parameters
+// Default Parameters
 
 function greeting(name: string = "akhil"): string {
     return `hello my name ${name}`
 }
 console.log(greeting()); // hello my name akhil
 console.log(greeting("aswin")); // hello my name aswin 
+
+
+// Decorator 
+
+function logger(target: Function): void {
+    console.log("Class has been logged:", target);
+}
+
+@logger
+class MyClass {
+    constructor(public name: string) {
+        console.log(`Hello, ${this.name}`);
+    }
+}
+
+const myInstance = new MyClass("Akhil");
+console.log(myInstance);
+
+// Output:
+// Class has been logged: [class MyClass]
+// Hello, Akhil
+
+
+// Object 
+
+const newNestedObject = {
+    data: [
+        { name: "Item A", count: 12, stock: { property: 'stock', total: 50 } },
+        { name: "Item B", count: 18, stock: { property: 'stock', total: 80 } },
+        { name: "Item C", count: 22, stock: { property: 'stock', total: 60 } },
+        { name: "Item D", count: 27, stock: { property: 'stock', total: 40 } }
+    ]
+};
+
+// Calculate the sum of total values
+const sumOfTotals = newNestedObject.data.reduce((sum, item) => sum + item.stock.total, 0);
+
+console.log(sumOfTotals); // Output: 230
 
